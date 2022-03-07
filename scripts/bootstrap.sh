@@ -11,6 +11,7 @@ source /vagrant/scripts/install-git.sh
 source /vagrant/scripts/install-docker.sh
 source /vagrant/scripts/install-terraform.sh
 source /vagrant/scripts/install-packer.sh
+source /vagrant/scripts/install-awscli.sh
 
 # clean up
 apt-get clean
