@@ -3,16 +3,21 @@
 # remove comment if you want to enable debugging
 #set -x
 
-source /tmp/.env
+# source /tmp/.env
+
+USERNAME='vagrant'
+HOME_DIR='/home/vagrant'
 
 # Move gitconfig
-cp /tmp/.gitconfig ${HOME_DIR}/
-chown ${USERNAME}:${USERNAME} ${HOME_DIR}/.gitconfig
+# cp /tmp/.gitconfig ${HOME_DIR}/
+# chown ${USERNAME}:${USERNAME} ${HOME_DIR}/.gitconfig
+
 #ssh key copy
 cp -R /tmp/.ssh/ ${HOME_DIR}/
 chown -R ${USERNAME}:${USERNAME} ${HOME_DIR}/.ssh/
 chmod 644 ${HOME_DIR}/.ssh/known_hosts
 chmod 644 ${HOME_DIR}/.ssh/*.pub
+chmod 700 ${HOME_DIR}/.ssh/id_*
 
 config=${HOME_DIR}/.ssh/config
 if [ -f "$config" ]; then
